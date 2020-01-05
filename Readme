@@ -1,2 +1,7 @@
 -All programmes are written in python2 
-
+ 
+ User - Parent class
+ Young  - young class
+ Aged - aged class
+ function - a function between the classes where old people are assigned 
+            to young through series of decisions made by both young and old as stated in the problem
