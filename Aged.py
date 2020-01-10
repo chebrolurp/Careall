@@ -24,9 +24,12 @@ class Aged(CareallUser):
 			print(" ")
 			print("{} Would you like to be taken care by {}. Say Yes or No".format(self.name,young.name))
 			d = raw_input()
-			if d =='Yes':
+			if d =='Yes'or d == 'yes':
 				self.set_status(False)
 				return True
-			else:
+			elif d == 'No' or d == 'no':
 				return False
+			else:
+				print("Type Yes or No")
+				return self.approve(young)
 

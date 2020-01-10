@@ -5,7 +5,9 @@ from Aged import Aged
 A1 = Aged('Krishna',75,'Male')
 A2 = Aged('Swati',60,'Female')
 A3 = Aged('Arjun',70,'Male')
-Alist = [A1,A2,A3]
+A4 = Aged('Arun',70,'Male')
+A5 = Aged('Ajay',70,'Male')
+Alist = [A1,A2,A3,A4,A5]
 
 Y1 = Young("Ram",25,'Male')
 Y2 = Young("Sita",23,'Female')
@@ -19,13 +21,16 @@ for young in Ylist:
 		young.choose(Alist)
 		for aged in young.choosen:
 			if (aged.approve(young)):
-				if(young.add_aged(aged)):
+				de = young.add_aged(aged)
+				if(de):
 					print("{} is taking care of {}".format(young.name,aged.name))
 					aged.alot_young(young)
 					print(" ")
 					d.__setitem__(aged.name,young.name)
 				else:
-					print("choose another one")
+					print("{} has reached his limit. choose another one".format(young.name))
+					young.set_status(False)
+					aged.set_status(True)
 
 #print(" ")
 #for A in Alist:
